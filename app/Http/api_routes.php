@@ -10,4 +10,6 @@
 */
 
 
+Route::resource("bistros", "BistroAPIController");
 
+Route::resource("boxes", "BoxAPIController");

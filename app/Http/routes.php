@@ -76,5 +76,15 @@ Route::group(['middleware' => ['web']], function () {
         'uses' => 'BistroController@destroy',
     ]);
 
+    Route::resource("boxes", "BoxController");
+
+    Route::get('boxes/delete/{id}', [
+        'as' => 'boxes.delete',
+        'uses' => 'BoxController@destroy',
+    ]);
+
 });
+
+
+
 
