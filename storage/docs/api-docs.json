@@ -1,0 +1,558 @@
+{
+    "swagger": "2.0",
+    "paths": {
+        "/bistros": {
+            "get": {
+                "tags": [
+                    "Bistro"
+                ],
+                "summary": "Get a listing of the Bistros.",
+                "description": "Get all Bistros",
+                "externalDocs": {
+                    "description": "Some of my work can be found on this website",
+                    "url": "http://www.fnkdesigns.co.uk"
+                },
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/Bistro"
+                                    }
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Bistro"
+                ],
+                "summary": "Store a newly created Bistro in storage",
+                "description": "Store Bistro",
+                "externalDocs": {
+                    "description": "Some of my work can be found on this website",
+                    "url": "http://www.fnkdesigns.co.uk"
+                },
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Bistro that should be stored",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/Bistro"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/Bistro"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/bistros/{id}": {
+            "get": {
+                "tags": [
+                    "Bistro"
+                ],
+                "summary": "Display the specified Bistro",
+                "description": "Get Bistro",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of Bistro",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/Bistro"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Bistro"
+                ],
+                "summary": "Update the specified Bistro in storage",
+                "description": "Update Bistro",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of Bistro",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Bistro that should be updated",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/Bistro"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/Bistro"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Bistro"
+                ],
+                "summary": "Remove the specified Bistro from storage",
+                "description": "Delete Bistro",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of Bistro",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "type": "string"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/boxes": {
+            "get": {
+                "tags": [
+                    "Box"
+                ],
+                "summary": "Get a listing of the Boxes.",
+                "description": "Get all Boxes",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/Box"
+                                    }
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Box"
+                ],
+                "summary": "Store a newly created Box in storage",
+                "description": "Store Box",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Box that should be stored",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/Box"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/Box"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/boxes/{id}": {
+            "get": {
+                "tags": [
+                    "Box"
+                ],
+                "summary": "Display the specified Box",
+                "description": "Get Box",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of Box",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/Box"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Box"
+                ],
+                "summary": "Update the specified Box in storage",
+                "description": "Update Box",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of Box",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Box that should be updated",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/Box"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/Box"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Box"
+                ],
+                "summary": "Remove the specified Box from storage",
+                "description": "Delete Box",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of Box",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "type": "string"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Bistro": {
+            "required": [],
+            "properties": {
+                "id": {
+                    "description": "id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "name": {
+                    "description": "name",
+                    "type": "string"
+                },
+                "created_at": {
+                    "description": "created_at",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "updated_at": {
+                    "description": "updated_at",
+                    "type": "string",
+                    "format": "date-time"
+                }
+            },
+            "externalDocs": {
+                "description": "Some of my work can be found on this website",
+                "url": "http://www.fnkdesigns.co.uk"
+            }
+        },
+        "Box": {
+            "required": [],
+            "properties": {
+                "id": {
+                    "description": "id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "box_type": {
+                    "description": "box_type",
+                    "type": "string"
+                },
+                "title": {
+                    "description": "title",
+                    "type": "string"
+                },
+                "slug": {
+                    "description": "slug",
+                    "type": "string"
+                },
+                "short_title": {
+                    "description": "short_title",
+                    "type": "string"
+                },
+                "marketing_description": {
+                    "description": "marketing_description",
+                    "type": "string"
+                },
+                "calories_kcal": {
+                    "description": "calories_kcal",
+                    "type": "string"
+                },
+                "protein_grams": {
+                    "description": "protein_grams",
+                    "type": "string"
+                },
+                "fat_grams": {
+                    "description": "fat_grams",
+                    "type": "string"
+                },
+                "carbs_grams": {
+                    "description": "carbs_grams",
+                    "type": "string"
+                },
+                "bulletpoint1": {
+                    "description": "bulletpoint1",
+                    "type": "string"
+                },
+                "bulletpoint2": {
+                    "description": "bulletpoint2",
+                    "type": "string"
+                },
+                "bulletpoint3": {
+                    "description": "bulletpoint3",
+                    "type": "string"
+                },
+                "recipe_diet_type_id": {
+                    "description": "recipe_diet_type_id",
+                    "type": "string"
+                },
+                "season": {
+                    "description": "season",
+                    "type": "string"
+                },
+                "base": {
+                    "description": "base",
+                    "type": "string"
+                },
+                "protein_source": {
+                    "description": "protein_source",
+                    "type": "string"
+                },
+                "preparation_time_minutes": {
+                    "description": "preparation_time_minutes",
+                    "type": "string"
+                },
+                "shelf_life_days": {
+                    "description": "shelf_life_days",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "equipment_needed": {
+                    "description": "equipment_needed",
+                    "type": "string"
+                },
+                "origin_country": {
+                    "description": "origin_country",
+                    "type": "string"
+                },
+                "recipe_cuisine": {
+                    "description": "recipe_cuisine",
+                    "type": "string"
+                },
+                "in_your_box": {
+                    "description": "in_your_box",
+                    "type": "string"
+                },
+                "gousto_reference": {
+                    "description": "gousto_reference",
+                    "type": "string"
+                },
+                "created_at": {
+                    "description": "created_at",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "updated_at": {
+                    "description": "updated_at",
+                    "type": "string",
+                    "format": "date-time"
+                }
+            },
+            "externalDocs": {
+                "description": "Some of my work can be found on this website",
+                "url": "http://www.fnkdesigns.co.uk"
+            }
+        }
+    }
+}
